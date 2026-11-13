@@ -1,0 +1,7 @@
+database:
+  url: "mysql+pymysql://bidata:bidata_pwd@127.0.0.1:3306/bidata?charset=utf8mb4"
+generate:
+  scale: 1.0
+  start_date: "2025-01-01"
+  end_date: "2026-11-10"
+  seed: 20261113

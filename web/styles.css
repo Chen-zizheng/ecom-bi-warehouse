@@ -1,0 +1,40 @@
+:root {
+  --bg: #f5f7fb; --panel: #fff; --ink: #1b2333; --muted: #6b7688;
+  --line: #e3e8f0; --accent: #2b6cb0; --accent2: #38a169; --warn: #c05621; --bad: #c53030;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 14px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  padding: 18px 28px; background: #fff; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.brand { display: flex; gap: 14px; align-items: center; }
+.logo { width: 42px; height: 42px; border-radius: 10px; background: var(--accent); color: #fff;
+  display: grid; place-items: center; font-weight: 700; letter-spacing: .5px; }
+h1 { font-size: 18px; margin: 0; }
+.sub { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; }
+.controls { display: flex; gap: 12px; align-items: center; font-size: 13px; color: var(--muted); }
+select, button { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line);
+  background: #fff; color: var(--ink); }
+button { cursor: pointer; background: var(--accent); color: #fff; border-color: var(--accent); }
+button:hover { filter: brightness(1.05); }
+main { padding: 20px 28px 8px; display: flex; flex-direction: column; gap: 16px; }
+.chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.chip { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.chip .label { color: var(--muted); font-size: 12.5px; }
+.chip .value { font-size: 24px; font-weight: 650; margin-top: 6px; letter-spacing: -.2px; }
+.chip .foot { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.panel-head h2 { font-size: 15px; margin: 0; }
+.hint { color: var(--muted); font-size: 12.5px; }
+.chart { width: 100%; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+/* 12 条规则要一眼看全：不设高度上限，靠页面滚动 */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: #fff; }
+.pass { color: var(--accent2); font-weight: 600; }
+.fail { color: var(--bad); font-weight: 600; }
+footer { display: flex; justify-content: space-between; padding: 14px 28px 22px; color: var(--muted); font-size: 12px; }
+@media (max-width: 1100px) { .chips { grid-template-columns: repeat(3, 1fr); } .grid2 { grid-template-columns: 1fr; } }

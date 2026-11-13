@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+*.sqlite3
+docs/*.png.tmp
+.venv/
+warehouse.db
+!docs/dashboard.png

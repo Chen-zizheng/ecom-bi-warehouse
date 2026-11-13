@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电商 BI 报表 · ecom-bi-warehouse</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="logo">BI</div>
+    <div>
+      <h1>电商销售 BI 报表</h1>
+      <p class="sub">MySQL 8 星型模型 · 增量装载 · 12 条质量规则 · 行级权限</p>
+    </div>
+  </div>
+  <div class="controls">
+    <label>查看身份
+      <select id="role">
+        <option value="">全部数据（analyst）</option>
+        <option value="east_ops">华东运营</option>
+        <option value="apparel_pm">服饰品类</option>
+      </select>
+    </label>
+    <label>趋势天数
+      <select id="days">
+        <option>30</option><option selected>60</option><option>120</option>
+      </select>
+    </label>
+    <button id="refresh">刷新</button>
+  </div>
+</header>
+
+<main>
+  <section class="chips" id="chips"></section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>日销售额与订单数</h2><span class="hint" id="trend-hint"></span></div>
+    <div id="trend" class="chart"></div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div class="panel-head"><h2>品类销售</h2><span class="hint">按净销售额排序</span></div>
+      <div id="category" class="chart"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>区域分布</h2><span class="hint">行级权限生效后只剩可见区域</span></div>
+      <div id="region" class="chart"></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div class="panel-head"><h2>退货原因</h2><span class="hint">件数</span></div>
+      <div id="returns" class="chart"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>月内复购率</h2><span class="hint">当月下过单的人里，当月下单 ≥2 次的比例</span></div>
+      <div id="repeat" class="chart"></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div class="panel-head"><h2>数据质量（最近一次）</h2><span class="hint">12 条规则</span></div>
+      <div id="dq" class="table-wrap"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>装载记录</h2><span class="hint">etl_run</span></div>
+      <div id="runs" class="table-wrap"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>接口：/api/kpi · /api/trend · /api/category · /api/region · /api/returns · /api/repeat · /api/dq · /api/runs</span>
+  <span id="elapsed"></span>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
