@@ -84,7 +84,7 @@ TS = DateTime().with_variant(mysql.DATETIME(fsp=6), 'mysql')
 
 `/api/kpi`、`/api/trend`、`/api/category`、`/api/region`、`/api/channel`、`/api/returns`、`/api/repeat`、`/api/months`、`/api/runs`、`/api/dq`、`/api/roles`、`/api/health`。
 
-`/api/kpi` 和 `/api/trend` 收一个 `role` 参数。`analyst` 看全国，`region_east` 这类角色只看自己区域，SQL 里多一个区域条件。这是按身份切数据的演示，不是数据库层的行级安全，页面顶上下拉框就是在切它。
+`/api/kpi` 和 `/api/trend` 收一个 `role` 参数。`analyst` 看全国，`region_east` 这类角色只看自己区域，SQL 里多一个区域条件。这是按身份切数据的演示，数据库层没有开行级安全；页面顶上的下拉框就是在切它。
 
 ## 怎么跑
 
